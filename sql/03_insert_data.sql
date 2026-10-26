@@ -32,3 +32,54 @@ VALUES
 (3, 'R201', 'Premium', 1000.00, 2);
 
 SELECT * FROM room;
+
+INSERT INTO service (service_id, service_name, price)
+VALUES
+(1, 'Groming', 300.00),
+(2, 'Walking', 150.00),
+(3, 'Bath', 200.00);
+
+SELECT * FROM service;
+
+INSERT INTO reservation (
+	reservation_id,
+	pet_id,
+	room_id,
+	check_in_date,
+	check_out_date,
+	status
+)
+VALUES
+(1, 1, 1, '2026-11-01', '2026-11-04', 'Confirmed'),
+(2, 2, 2, '2026-11-03', '2026-11-07', 'Confirmed'),
+(3, 3, 1, '2026-11-10', '2026-11-12', 'Confirmed'),
+(4, 4, 3, '2026-11-15', '2026-11-20', 'Confirmed');
+
+SELECT * FROM reservation;
+
+INSERT INTO reservation_service (reservation_id, service_id, quantity)
+VALUES
+(1, 1, 1),
+(1, 3, 1),
+(2, 2, 2),
+(3, 3, 1),
+(4, 1, 1),
+(4, 2, 3);
+
+SELECT * FROM reservation_service;
+
+INSERT INTO payment (
+	payment_id,
+	reservation_id,
+	amount,
+	payment_date,
+	transaction_id,
+	payment_method
+)
+VALUES
+(1, 1, 1800.00, '2026-10-28', 'TRX001', 'Credi Card'),
+(2, 2, 3300.00, '2026-10-30', 'TRX002', 'Credit Card'),
+(3, 3, 1200.00, '2026-11-08', 'TRX003', 'Cash'),
+(4, 4, 5450.00, '2026-11-13', 'TRX004', 'Debit Card');
+
+SELECT * FROM payment;
