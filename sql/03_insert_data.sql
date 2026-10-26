@@ -14,3 +14,21 @@ VALUES
 (4, 3, 'Rocky', '2020-11-05', 'German Shepherd');
 
 SELECT * FROM pet;
+
+INSERT INTO cat (pet_id, cat_type, color)
+VALUES
+(1, 'Indoor', 'Gray'),
+(2, 'Indoor', 'Cream');
+
+INSERT INTO dog (pet_id, size, fur_type)
+VALUES
+(2, 'Large', 'Long'),
+(4, 'Large', 'Medium');
+
+INSERT INTO room (room_id, room_number, room_type, price_per_night, capacity)
+VALUES
+(1, 'R101', 'Standard', 500.00, 1),
+(2, 'R102', 'Deluxe', 750.00, 2),
+(3, 'R201', 'Premium', 1000.00, 2);
+
+SELECT * FROM room;
