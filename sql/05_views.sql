@@ -1,4 +1,7 @@
-CREATE VIEW reservation_details AS
+USE pet_hotel;
+GO
+
+CREATE OR ALTER VIEW reservation_details AS
 SELECT
     reservation.reservation_id,
     pet.name AS pet_name,
@@ -11,10 +14,9 @@ JOIN pet
     ON reservation.pet_id = pet.pet_id
 JOIN room
     ON reservation.room_id = room.room_id;
+GO
 
-SELECT * FROM reservation_details;
-
-CREATE VIEW service_usage_summary AS
+CREATE OR ALTER VIEW service_usage_summary AS
 SELECT
     service.service_id,
     service.service_name,
@@ -23,6 +25,9 @@ FROM service
 JOIN reservation_service
     ON service.service_id = reservation_service.service_id
 GROUP BY service.service_id, service.service_name;
+GO
+
+SELECT * FROM reservation_details;
 
 SELECT * FROM service_usage_summary
 ORDER BY total_usage DESC;
