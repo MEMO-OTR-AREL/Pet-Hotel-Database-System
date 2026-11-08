@@ -34,7 +34,7 @@ CREATE TABLE room (
 );
 CREATE TABLE reservation (
 	reservation_id INTEGER PRIMARY KEY,
-	Pet_id INTEGER NOT NULL,
+	pet_id INTEGER NOT NULL,
 	room_id INTEGER NOT NULL,
 	check_in_date DATE NOT NULL,
 	check_out_date DATE NOT NULL,
